@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id(); // Auto-increment primary key (id)
             $table->string('name'); // Category name
+            $table->unsignedBigInteger('user_id');
             $table->timestamps(); // Created_at & Updated_at timestamps
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -24,7 +24,7 @@ Route::get('/', function () {
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/products', [ProductController::class, 'index'])->name('product.index')->middleware(['auth', 'verified']);
+Route::get('/products', [ProductController::class, 'create'])->name('product.create')->middleware(['auth', 'verified']);
 
 
 Route::middleware('auth')->group(function () {

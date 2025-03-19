@@ -32,7 +32,7 @@ class AdhesiveController extends Controller
     {
          // Validate the request
          $request->validate([
-            'comapany_id' => 'required',
+            'company_id' => 'required',
             'name' => 'nullable|string|max:255',
             'quantity' => 'nullable|integer',
             'purchase_cost' => 'required|integer',
@@ -43,7 +43,7 @@ class AdhesiveController extends Controller
         // Add the authenticated user's ID to the request data
         $data = $request->all();
         $data['user_id'] = auth()->id(); // Get the logged-in user's ID
-        dd($data);
+        // dd($data);
         // Create the company record
         Adhesive::create($data);
 

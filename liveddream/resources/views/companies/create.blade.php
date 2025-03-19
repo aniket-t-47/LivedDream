@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Company</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .container {
-            max-width: 900px;
-            margin-top: 20px;
-        }
-        .card {
-            padding: 20px;
-        }
-        .btn-save {
-            float: right;
-            margin-top: 10px;
-        }
-        
-    </style>
-</head>
-<body>
-    <div class="container">
+
+@extends('layouts.app')
+@section('content')
+<div class="container">
         <h2>Add Company</h2>
         <form action="{{ route('companies.store') }}" method="POST">
             @csrf
@@ -30,6 +10,7 @@
             <!-- Company Details -->
             <div class="col-md-6">
                 <div class="card">
+                    <div class="m-3">
                     <h5>Company Details</h5>
                     <div class="mb-3">
                         <label class="form-label">Company Name</label>
@@ -38,7 +19,7 @@
                     <div class="mb-3">
                         <label class="form-label">Company Type*</label>
                         <select  name="type" class="form-select">
-                            {{-- <option>Select company type</option> --}}
+                       
                             @foreach($companyTypes as $type)
                                 <option value="{{ $type }}">{{ $type }}</option>
                             @endforeach
@@ -47,7 +28,7 @@
                     <div class="mb-3">
                         <label class="form-label">Our Relation</label>
                         <select name="relation" class="form-select">
-                            {{-- <option>Select relation</option> --}}
+                         
                             @foreach($relations as $relation)
                                 <option value="{{ $relation }}">{{ $relation }}</option>
                             @endforeach
@@ -56,7 +37,7 @@
                     <div class="mb-3">
                         <label class="form-label">Product Category*</label>
                         <select name="product_category" class="form-select">
-                            {{-- <option>Select Product Category</option> --}}
+                            
                             @foreach($categories as $category)
                                 <option value="{{ $category }}">{{ $category }}</option>
                             @endforeach
@@ -65,7 +46,7 @@
                     <div class="mb-3">
                         <label class="form-label">Zone*</label>
                         <select name="zone" class="form-select">
-                            {{-- <option>Select Zone</option> --}}
+                          
                             @foreach($zones as $key => $zone)
                                 <option value="{{ $key + 1 }}">{{ $zone }}</option>
                             @endforeach
@@ -122,11 +103,13 @@
                         </div>
                     </div>  
                 </div>
+                </div>
             </div>
             
             <!-- Godown & Sales Details -->
             <div class="col-md-6">
                 <div class="card">
+                    <div class="m-3">
                     <h5> Contact Person</h5>
                     <h6 class="my-4">1. Sales Executives Details</h6>
                     <div class="mb-3">
@@ -171,6 +154,7 @@
                         <input type="email" name="sales_rep_email" class="form-control" placeholder="Enter Email">
                     </div>
                 </div>
+                </div>
             </div>
         </div>
         </form>
@@ -208,5 +192,6 @@
             }
         });
     </script>
-</body>
-</html>
+{{-- </body>
+</html> --}}
+@endsection

@@ -1,36 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Adhesive</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .container {
-            max-width: 900px;
-            margin-top: 20px;
-        }
-
-        .card {
-            padding: 20px;
-        }
-
-        .btn-save {
-            float: right;
-            margin-top: 10px;
-        }
-
-        #save {
-            position: absolute;
-            right: 30%;
-            top: 20px;
-            width: 10%;
-        }
-    </style>
-</head>
-
-<body>
+@extends('layouts.app')
+@section('content')
 
     <div class="container">
         <h2>Add New Addhesive</h2>
@@ -42,6 +11,7 @@
                 <div class="col-md-6">
 
                     <div class="card">
+                        <div class="m-3">
                         <h5>Addhesive Details</h5>
                         <div class="mb-3">
                             <label class="form-label">Company </label>
@@ -61,10 +31,10 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Addhesive Quantity</label>
-                            <input type="text" name="quatity" class="form-control"
+                            <input type="text" name="quantity" class="form-control"
                                 placeholder="Enter addhesive quantity">
                         </div>
-                        <div>
+                        <div>   
                             <h5>Pricing Details</h5>
                             <div class="row">
                                 <div class="col-md-6">
@@ -80,12 +50,10 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
                 </div>
             </div>
         </form>
     </div>
 
-</body>
-
-</html>
+@endsection

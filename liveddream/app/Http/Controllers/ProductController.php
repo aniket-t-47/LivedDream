@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Company;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('products.index');
+      
     }
 
     /**
@@ -20,7 +22,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $companies = Company::select('id, name')->get();
+        $categories = Category::select('id, name')->get();
+        $adhesives = Category::select('id, name')->get();
+        return view('products.create', compact('company','categories','adhesives'));
     }
 
     /**
