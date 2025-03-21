@@ -35,6 +35,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/companies', [CompanyController::class, 'store'])->name('companies.store');
     Route::get('/adhesive', [AdhesiveController::class, 'create'])->name('adhesive.create');
     Route::post('/adhesive', [AdhesiveController::class, 'store'])->name('adhesive.store');
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+
     // Route::resource('companies', CompanyController::class);
 
 });

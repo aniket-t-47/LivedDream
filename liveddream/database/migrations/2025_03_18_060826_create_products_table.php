@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('product_code')->unique();
             $table->integer('gst');
-            $table->date('warranty_period')->nullable();
+            $table->integer('warranty_duration')->nullable();; // Stores duration as a number (e.g., 2)
+            $table->enum('warranty_type', ['days', 'months', 'years']); // Restricts values to specific options
             $table->unsignedBigInteger('adhesive_id');
             $table->decimal('labor_charge', 10, 2)->default(0);
             $table->date('deliver_time')->nullable();
