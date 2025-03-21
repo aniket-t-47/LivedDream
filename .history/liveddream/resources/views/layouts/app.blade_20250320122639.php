@@ -31,24 +31,22 @@
             background: #343a40;
             color: white;
             height: 100vh;
-            /* padding-top: 20px; */
+            padding-top: 20px;
             position: fixed;
             transition: all 0.3s;
-            z-index: 1030;
         }
 
         .sidebar .sidebar-title {
             text-align: center;
             font-size: 1.2rem;
-            /* margin-bottom: 20px; */
+            margin-bottom: 20px;
         }
 
         .sidebar .logo {
             display: block;
             margin: 0 auto;
-            width: 55px;
+            width: 80px;
             height: auto;
-           
         }
 
         .nav-links {
@@ -82,26 +80,20 @@
             padding: 20px;
             width: 100%;
             transition: margin-left 0.3s;
-            /* background-color:green; */
-            /* justify-items:center; */
         }
 
-        .navbar {
+        /* .navbar {
             display: flex;
             justify-content: space-between;
-            /* align-items: center; */
+            align-items: center;
             background: white;
-            /* padding: 10px 20px; */
-            /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-            /* z-index: 1000; Lower than the sidebar */
-                position: fixed;
-                top: 0;
-                width: 100%;
-        }
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        } */
 
         .search-form {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
         }
 
         .search-form input {
@@ -110,7 +102,7 @@
             border-radius: 4px;
         }
 
-        /* .search-form button {
+        .search-form button {
             background: #007bff;
             color: white;
             border: none;
@@ -118,11 +110,11 @@
             margin-left: 5px;
             cursor: pointer;
             border-radius: 4px;
-        } */
+        }
 
-        /* .search-form button:hover {
+        .search-form button:hover {
             background: #0056b3;
-        } */
+        }
 
         .user-menu {
             display: flex;
@@ -140,13 +132,12 @@
         }
 
 /* Footer */
-        /* footer {
+        footer {
             text-align: center;
             padding: 10px;
             background: white;
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        } */
-        
+        }
 </style>
 
    
@@ -268,11 +259,11 @@
                     <form class="d-none d-sm-inline-block form-inline mx-auto">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search..." aria-label="Search">
-                            <!-- <div class="input-group-append">
+                            <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit">
                                     <i class="fas fa-search"></i>
                                 </button>
-                            </div> -->
+                            </div>
                         </div>
                     </form>
 
@@ -280,7 +271,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Search (for smaller screens) -->
-                        <!-- <li class="nav-item d-sm-none">
+                        <li class="nav-item d-sm-none">
                             <a class="nav-link" href="#" id="searchDropdown" role="button" data-toggle="dropdown">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
@@ -296,7 +287,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </li> -->
+                        </li>
 
                         <!-- User Dropdown -->
                         <li class="nav-item dropdown">
@@ -315,7 +306,7 @@
                             </ul>
                         </li>
                     </ul>
-                </nav>
+</nav>
 
 
 </div>

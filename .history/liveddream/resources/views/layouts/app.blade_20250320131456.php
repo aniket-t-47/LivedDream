@@ -268,11 +268,11 @@
                     <form class="d-none d-sm-inline-block form-inline mx-auto">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search..." aria-label="Search">
-                            <!-- <div class="input-group-append">
+                            <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit">
                                     <i class="fas fa-search"></i>
                                 </button>
-                            </div> -->
+                            </div>
                         </div>
                     </form>
 

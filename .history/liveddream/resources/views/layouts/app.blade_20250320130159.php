@@ -31,10 +31,10 @@
             background: #343a40;
             color: white;
             height: 100vh;
-            /* padding-top: 20px; */
+            padding-top: 20px;
             position: fixed;
             transition: all 0.3s;
-            z-index: 1030;
+            /* z-index: 1030; */
         }
 
         .sidebar .sidebar-title {
@@ -91,7 +91,7 @@
             justify-content: space-between;
             /* align-items: center; */
             background: white;
-            /* padding: 10px 20px; */
+            padding: 10px 20px;
             /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
             /* z-index: 1000; Lower than the sidebar */
                 position: fixed;
@@ -268,11 +268,11 @@
                     <form class="d-none d-sm-inline-block form-inline mx-auto">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search..." aria-label="Search">
-                            <!-- <div class="input-group-append">
+                            <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit">
                                     <i class="fas fa-search"></i>
                                 </button>
-                            </div> -->
+                            </div>
                         </div>
                     </form>
 
@@ -280,7 +280,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Search (for smaller screens) -->
-                        <!-- <li class="nav-item d-sm-none">
+                        <li class="nav-item d-sm-none">
                             <a class="nav-link" href="#" id="searchDropdown" role="button" data-toggle="dropdown">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
@@ -296,7 +296,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </li> -->
+                        </li>
 
                         <!-- User Dropdown -->
                         <li class="nav-item dropdown">

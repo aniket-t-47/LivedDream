@@ -25,7 +25,7 @@ class ProductController extends Controller
         $companies = Company::select('id', 'name')->get();
         $categories = Category::select('id','name')->get();
         $adhesives = Category::select('id', 'name')->get();
-        return view('products.create', compact('companies','categories','adhesives'));
+        return view('products.create', compact('company','categories','adhesives'));
     }
 
     /**
