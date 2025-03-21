@@ -120,85 +120,64 @@
                                                 <h1 class="modal-title fs-5" id="exampleModalLabel">Product Details</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body" >
+                                            <div class="modal-body">
                                                 <form>
-                                                    <div style="display:flex;flex-direction:row;gap:5%;width:100% ;">
-                                                        <div class="column" >
-                                                            <div class="mb-3">
-                                                                <label class="form-label">Select Image</label>
-                                                                <div class="border p-3 text-center" style="border-style: dashed;">
-                                                                    <input type="file" class="form-control" id="productImage" accept="image/*" hidden>
-                                                                    <label for="productImage" class="d-block">📤 Drag your file(s) or <a href="#">browse</a></label>
-                                                                    <small class="text-muted">Max 10 MB files are allowed</small>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mb-3" >
-                                                                <label for="pdfName" class="form-label">PDF Name</label>
-                                                                <input type="text" class="form-control" id="pdfName" placeholder="Enter PDF Name">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="productCode" class="form-label">Product Code</label>
-                                                                <input type="text" class="form-control" id="productCode" placeholder="Enter product code">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="productColor" class="form-label">Product Color</label>
-                                                                <input type="text" class="form-control" id="productColor" placeholder="Enter Color">
+                                                    <div class="column">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Select Image</label>
+                                                            <div class="border p-3 text-center" style="border-style: dashed;">
+                                                                <input type="file" class="form-control" id="productImage" accept="image/*" hidden>
+                                                                <label for="productImage" class="d-block">📤 Drag your file(s) or <a href="#">browse</a></label>
+                                                                <small class="text-muted">Max 10 MB files are allowed</small>
                                                             </div>
                                                         </div>
-                                                        <div class="column">
-                                                            <div class="row">
-                                                                <div class="col-md-6" style="display:flex;flex-direction:column">
-                                                                    <label for="purchaseCost" class="form-label">Purchase cost*</label>
-                                                                    <input type="number" class="form-control" id="purchaseCost" placeholder="₹ 00" required>
-                                                                </div>
-                                                                <div class="col-md-6" style="display:flex;flex-direction:column">
-                                                                    <label for="sellingPrice" class="form-label">Selling price*</label>
-                                                                    <input type="number" class="form-control" id="sellingPrice" placeholder="₹ 00" required>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="discountPrice" class="form-label">Discount price</label>
-                                                                <input type="number" class="form-control" id="discountPrice" placeholder="₹ 00">
-                                                            </div>
-                                                            <div class="form-check">
-                                                            
-                                                                <label class="form-check-label" for="stockAvailable">Stock Available</label>
-                                                                <input class="form-check-input" type="checkbox" id="stockAvailable" checked>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                    
-                                                                    <button type="button" class="btn btn-primary">Save</button>
-                                                            </div>
+                                                        <div class="mb-3">
+                                                            <label for="pdfName" class="form-label">PDF Name</label>
+                                                            <input type="text" class="form-control" id="pdfName" placeholder="Enter PDF Name">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="productCode" class="form-label">Product Code</label>
+                                                            <input type="text" class="form-control" id="productCode" placeholder="Enter product code">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="productColor" class="form-label">Product Color</label>
+                                                            <input type="text" class="form-control" id="productColor" placeholder="Enter Color">
                                                         </div>
                                                     </div>
+                                                    <div class="column"></div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="purchaseCost" class="form-label">Purchase cost*</label>
+                                                            <input type="number" class="form-control" id="purchaseCost" placeholder="₹ 00" required>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="sellingPrice" class="form-label">Selling price*</label>
+                                                            <input type="number" class="form-control" id="sellingPrice" placeholder="₹ 00" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="discountPrice" class="form-label">Discount price</label>
+                                                        <input type="number" class="form-control" id="discountPrice" placeholder="₹ 00">
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="stockAvailable" checked>
+                                                        <label class="form-check-label" for="stockAvailable">Stock Available</label>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                               
+                                               <button type="button" class="btn btn-primary">Save</button>
+                                           </div>
                                                 </form>
                                             </div>
-                                            <!-- <div class="modal-footer">
+                                            <div class="modal-footer">
                                                
                                                 <button type="button" class="btn btn-primary">Save</button>
-                                            </div> -->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                
-
-
-                                <table class="table table-bordered mt-3">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>Product Image</th>
-                                            <th>Product Name</th>
-                                            <th>Product Code</th>
-                                            <th>Product Color</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Product rows will go here -->
-                                    </tbody>
-                                </table>
                                 <h6>Sample Images</h6>
-
                                 <div class="border p-3 text-center" style="border-style: dashed;">
                                     Drag your file(s) or <a href="#">browse</a>
                                     <br>

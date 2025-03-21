@@ -197,7 +197,7 @@
                                         <!-- Product rows will go here -->
                                     </tbody>
                                 </table>
-                                <h6>Sample Images</h6>
+                                
 
                                 <div class="border p-3 text-center" style="border-style: dashed;">
                                     Drag your file(s) or <a href="#">browse</a>

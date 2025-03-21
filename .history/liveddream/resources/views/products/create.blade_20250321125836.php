@@ -181,24 +181,14 @@
                                     </div>
                                 </div>
 
-                                
-
-
-                                <table class="table table-bordered mt-3">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>Product Image</th>
-                                            <th>Product Name</th>
-                                            <th>Product Code</th>
-                                            <th>Product Color</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Product rows will go here -->
-                                    </tbody>
-                                </table>
                                 <h6>Sample Images</h6>
 
+
+                                <table>
+                                    <th>productimg</th>
+                                    <th>Productname</th>
+                                    <th>productcode</th>
+                                </table>
                                 <div class="border p-3 text-center" style="border-style: dashed;">
                                     Drag your file(s) or <a href="#">browse</a>
                                     <br>

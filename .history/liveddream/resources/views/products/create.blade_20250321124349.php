@@ -121,7 +121,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body" >
-                                                <form>
+                                                <form sty>
                                                     <div style="display:flex;flex-direction:row;gap:5%;width:100% ;">
                                                         <div class="column" >
                                                             <div class="mb-3">
@@ -181,24 +181,7 @@
                                     </div>
                                 </div>
 
-                                
-
-
-                                <table class="table table-bordered mt-3">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>Product Image</th>
-                                            <th>Product Name</th>
-                                            <th>Product Code</th>
-                                            <th>Product Color</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Product rows will go here -->
-                                    </tbody>
-                                </table>
                                 <h6>Sample Images</h6>
-
                                 <div class="border p-3 text-center" style="border-style: dashed;">
                                     Drag your file(s) or <a href="#">browse</a>
                                     <br>
