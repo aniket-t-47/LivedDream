@@ -5,7 +5,7 @@
 
         <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <button class="btn btn-primary" type="submit" id="product">Save Product</button>
+            <button class="btn btn-primary"type="submit" id="product">Save Product</button>
             <div class="row">
                 <div class="col-md-6">
 
@@ -13,54 +13,47 @@
                         <div class="m-3">
                             <h5>Product Details</h5>
                             <div class="mb-3">
-                                <label class="form-label">Company</label><span class="">*</span>
+                                <label class="form-label">Company</label>
                                 <select name="company_id" class="form-select">
-                                    <option value="" disabled selected>Select company</option>
+                                    <option>Select company</option>
                                     @foreach ($companies as $company)
                                         <option value="{{ $company->id }}">{{ $company->name }}</option>
                                     @endforeach
 
                                 </select>
-                                <span id="company_name_error" style="color: red;"></span>
-
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Category</label><span class="">*</span>
-                                <select name="category_id" id="category" class="form-select">
-                                    <option value="" disabled selected>Select Product category</option>
+                                <label class="form-label">Category</label>
+                                <select name="category_id" class="form-select">
+                                    <option>Select Product category</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
-                                <span id="Cat_name_error" style="color: red;"></span>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Product Name</label><span class="">*</span>
+                                <label class="form-label">Product Name</label>
                                 <input type="text" name="name" class="form-control" placeholder="Enter product name">
-                                <span id="product_name_error" style="color: red;"></span>
                             </div>
                             <h5>Product Size</h5>
                             <div class="row" id="size-container">
                                 <div class="col-md-6">
                                     <label class="form-label">Length</label>
-                                    <input type="number" name="length[]" class="form-control" value="00"
-                                        min="0">
+                                    <input type="number" name="length[]" class="form-control" value="00">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label">Width</label>
-                                    <input type="number" name="width[]" class="form-control" value="00" min="0">
+                                    <input type="number" name="width[]" class="form-control" value="00">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label class="form-label">Thickness</label>
-                                    <input type="number" name="thickness[]" class="form-control" value="00"
-                                        min="0">
+                                    <input type="number" name="thickness[]" class="form-control" value="00">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="" class="form-label">Other</label>
-                                    <button type="button" class="btn btn-primary form-control" id="add-size">Add
-                                        Parameter</button>
+                                    <button type="button" class="btn btn-primary form-control" id="add-size">Add Parameter</button>
                                 </div>
                             </div>
 
@@ -73,11 +66,11 @@
                                 <label class="form-label">Warranty period</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="number" name="warranty_duration" class="form-control"
-                                            placeholder="Duration" min="0">
+                                        <input type="number" name="warranty_duration" class="form-control" placeholder="Duration" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <select name="warranty_type" class="form-select">
+                                        <select name="warranty_type" class="form-select" required>
+                                            <option value="days">Days</option>
                                             <option value="months">Months</option>
                                             <option value="years">Years</option>
                                         </select>
@@ -98,7 +91,7 @@
                         <div class="m-3">
                             <h5>Adhesive</h5>
                             <select name="adhesive_id" class="form-select mb-3">
-                                <option value="" disabled selected>Select Adhesive</option>
+                                <option>Select Adhesive</option>
                                 @foreach ($adhesives as $adhesive)
                                     <option value="{{ $adhesive->id }}">{{ $adhesive->name }}</option>
                                 @endforeach
@@ -220,83 +213,32 @@
         </form>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let form = document.querySelector("form");
+       document.addEventListener("DOMContentLoaded", function () {
+    let addButton = document.getElementById("add-size");
+    let container = document.getElementById("size-container");
 
-            let saveButton = document.getElementById('product');
+    if (addButton && container) {
+        addButton.addEventListener("click", function () {
+            let newRow = document.createElement("div");
+            newRow.classList.add("row", "mt-2");
 
-            if (saveButton) {
-                saveButton.addEventListener('click', function(event) {
-                    if (!validateForm()) {
-                        event.preventDefault();
-                    }
-                });
-            }
-
-            function validateForm() {
-                var productName = document.getElementsByName('name')[0].value;
-                var productCategory = document.getElementById('category').value;
-                var productCompany = document.getElementsByName('company_id')[0].value;
-
-                // Clear previous error messages
-                document.getElementById('product_name_error').innerText = '';
-                document.getElementById('Cat_name_error').innerText = '';
-                document.getElementById('company_name_error').innerText = '';
-
-                let isValid = true;
-
-                if (productName.trim() === '') {
-                    document.getElementById('product_name_error').innerText = 'Product name is required';
-                    isValid = false;
-                }
-
-                if (!productCategory || productCategory === '') {
-                    document.getElementById('Cat_name_error').innerText = 'Please select a category.';
-                    isValid = false;
-                }
-
-                if (!productCompany || productCompany === '') {
-                    document.getElementById('company_name_error').innerText = 'Please select a Company.';
-                    isValid = false;
-                }
-
-                if (isValid) {
-                    toastr.success('Product added successfully.');
-                    setTimeout(function() {
-                        window.location.href = '/products';
-                    }, 8000);
-                    return true;
-                }
-
-                return false;
-            }
-
-
-
-            let addButton = document.getElementById("add-size");
-            let container = document.getElementById("size-container");
-
-            if (addButton && container) {
-                addButton.addEventListener("click", function() {
-                    let newRow = document.createElement("div");
-                    newRow.classList.add("row", "mt-2");
-
-                    newRow.innerHTML = `
+            newRow.innerHTML = `
                 <div class="col-md-6">
                     <label class="form-label">Parameter Name</label>
                     <input type="text" name="custom_keys[]" class="form-control" placeholder="Enter parameter (e.g., Height)">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Value</label>
-                    <input type="number" name="custom_values[]" class="form-control" value="00" min="0">
+                    <input type="number" name="custom_values[]" class="form-control" value="00">
                 </div>
             `;
 
-                    container.appendChild(newRow);
-                });
-            } else {
-                console.error("Element not found: Ensure 'add-size' button and 'size-container' exist.");
-            }
+            container.appendChild(newRow);
         });
-    </script>
+    } else {
+        console.error("Element not found: Ensure 'add-size' button and 'size-container' exist.");
+    }
+});
+
+        </script>
 @endsection

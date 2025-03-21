@@ -10,7 +10,6 @@
      <!-- <link rel="stylesheet" href="resources/css/product.css"> -->
      <link rel="stylesheet" href="{{ asset('css/product.css') }}">
 
-
     <style>
         /* Custom Styles */
         body {
