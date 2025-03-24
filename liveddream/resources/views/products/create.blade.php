@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <div class="content">
-        <h2 class="mb-4">Create New Product</h2>
+    <div class="content ">
+        <h2 class="mb-0">Create New Product</h2>
 
         <form action="{{ route('products.store') }}" method="POST" id="productForm" enctype="multipart/form-data" onsubmit="return false;">
             @csrf
@@ -139,9 +139,9 @@
                                 <h5>Product Images</h5>
                                 <button class="btn btn-dark w-100 mb-3"  data-bs-toggle="modal" data-bs-target="#addproduct">Add Product Images</button>
 
-                                <div class="modal fade" id="addproduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="addproduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
                                     <div class="modal-dialog">
-                                        <div class="modal-content">
+                                        <div class="modal-content" >
                                             <div class="modal-header">
                                                 <h1 class="modal-title fs-5" id="exampleModalLabel">Product Details</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
