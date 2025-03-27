@@ -14,6 +14,7 @@ class AdhesiveController extends Controller
     public function index()
     {
         //
+        return view('adhesive.index');
     }
 
     /**

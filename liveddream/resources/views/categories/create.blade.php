@@ -3,7 +3,7 @@
     <div class="content ">
         <div style="display:flex;flex-direction:row;gap:30%">
             <h2 class="mb-0">Create Category</h2>
-            <button class="btn btn-primary btn-save" type="submit" id="company">Save Category</button>
+            <button class="btn btn-primary btn-save" type="submit" id="category">Save Category</button>
         </div>
 
 

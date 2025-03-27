@@ -5,7 +5,7 @@
         <h2>Add New Addhesive</h2>
         <form action="{{ route('adhesive.store') }}" method="POST">
             @csrf
-            <button class="btn btn-primary btn-save" type="submit" id="save">Save </button>
+            <button class="btn btn-primary btn-save" type="submit" id="adhesive">Save </button>
             <div class="row mt-3">
                 <!-- Company Details -->
                 <div class="col-md-6">
@@ -29,10 +29,26 @@
                                 required>
 
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Addhesive Quantity</label>
-                            <input type="text" name="quantity" class="form-control"
-                                placeholder="Enter addhesive quantity">
+                        <div class="mb-3" style="display:flex;flex-direction:row;gap:5%">
+                            <div style="width:50%">
+                                <label class="form-label">Addhesive Quantity</label>
+                                <input type="text" name="quantity" class="form-control"
+                                    placeholder="Enter addhesive quantity">
+                            </div>
+                            <div style="width:50%">
+                                <label class="form-label">Select Unit</label>
+                                <select name="adhesive_unit" id="unitSelect" class="form-control">
+                                    <option value="">unit</option>
+                                    <option value="kg">kg</option>
+                                    <option value="ml">ml</option>
+                                    <option value="l">lit</option>
+                                    <option value="">gram</option>
+                                    <option value="">meter</option>
+
+                                </select>
+                                
+                            </div>
+                            
                         </div>
                         <div>   
                             <h5>Pricing Details</h5>

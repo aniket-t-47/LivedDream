@@ -67,6 +67,7 @@
 .btn-save {
     float: right;
     margin-top: 10px;
+    /* width: 15%; */
 }
 #save{
     position: absolute;
@@ -79,4 +80,20 @@
 }
 .container-fluid{
     width:100%;
+}
+
+
+.upload-box{
+    border:2px dashed blue;
+    width:100%;
+    justify-content:center;
+    padding:10px;
+    margin: 10px;
+    height:40%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    cursor: pointer;
+    /* position: relative; */
 }

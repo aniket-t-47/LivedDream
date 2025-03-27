@@ -6,6 +6,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\AdhesiveController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SampleController;
+use App\Http\Controllers\zoneController;
 
 
 
@@ -46,6 +47,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/create-categories', [CategoryController::class, 'create'])->name('category.create');
     Route::get('/index-categories', [CategoryController::class, 'index'])->name('category.index');
     Route::get('/create-sample', [SampleController::class, 'create'])->name('sample.create');
+    Route::get('/index-sample', [SampleController::class, 'index'])->name('sample.index');
+    Route::get('/create-zones', [zoneController::class, 'create'])->name('zones.create');
+    Route::get('/index-zones', [zoneController::class, 'index'])->name('zones.index');
+
+
+
+
+    
 
 
     // Route::resource('companies', CompanyController::class);

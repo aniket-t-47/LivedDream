@@ -3,22 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Sample;
+use App\Models\zones;
 
-class SampleController extends Controller
+
+class zoneController extends Controller
 {
     //
     public function index()
     {
-        return view('sample.index');
+        return view('zones.index');
     }
 
 
+
+    
     public function create()
     {
         // $companies = Company::select('id', 'name')->get();
         // $sample = Sample::select('id', 'name')->get();
       
-        return view('sample.create');
+        return view('zones.create');
     }
 }

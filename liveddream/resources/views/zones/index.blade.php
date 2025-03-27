@@ -4,14 +4,14 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Main Content -->
-        <div class="col-md-12" style="width:100%">
+        <div class="col-md-12 p-4">
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h2 class="fw-bold">Products</h2>
-                <button class="btn btn-primary px-3"><i class="fas fa-plus"></i> Create New Product</button>
+                <h2 class="fw-bold">Zone Management</h2>
+                <button class="btn btn-primary px-3"><i class="fas fa-plus"></i> Add New Zone</button>
             </div>
 
             <!-- Search & Filter -->
-            <div class="card p-3 border-0 shadow-sm " style="width:1200px">
+            <div class="card p-3 border-0 shadow-sm" style="width:1200px">
                 <div class="d-flex justify-content-between align-items-center">
                     <!-- Search -->
                     <div class="input-group" style="max-width: 300px;">
@@ -34,20 +34,18 @@
             </div>
 
             <!-- Product Table -->
-            <div class="card mt-3 border-0 shadow-sm " style="width:1200px" >
+            <div class="card mt-3 border-0 shadow-sm" style="width:1200px">
                 <table class="table align-middle">
                     <thead class="table-light">
                         <tr>
                             <th></th>
                             <th>Sr No</th>
-                            <th>Product Img</th>
-                            <th>Products</th>
-                            <th>Code</th>
-                            <th>Company</th>
-                            <th>Category</th>
-                            <th>Warranty</th>
-                            <th>Actual Price</th>
-                            <th>Selling Price</th>
+                            <th>Zone Name</th>
+                            <th>Coverage area</th>
+                            <th></th>
+
+                           
+                            
                             <th></th>
                         </tr>
                     </thead>
@@ -56,13 +54,11 @@
                         <tr>
                             <td><input type="checkbox" class="selectItem" style="display: none;"></td>
                             <td>1</td>
-                            <td>Product 1</td>
-                            <td>P001</td>
-                            <td>Company A</td>
-                            <td>Category X</td>
-                            <td>1 Year</td>
-                            <td>$100</td>
-                            <td>$120</td>
+                            <td>ABC Interior</td>
+                            <td>aaa</td>
+                            <td></td>
+                           
+                            
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-light " data-bs-toggle="dropdown">
@@ -94,17 +90,13 @@
                 <h5>Filter Options</h5>
                 <hr>
                 <div>
-                    <h6>Company</h6>
-                    <input type="checkbox"> Company A<br>
-                    <input type="checkbox"> Company B<br>
+                    <h6>zone</h6>
+                    <input type="checkbox"> Zone A<br>
+                    <input type="checkbox"> Zone B<br>
                 </div>
+               
                 <div>
-                    <h6>Price Range</h6>
-                    <input type="checkbox"> $0 - $50<br>
-                    <input type="checkbox"> $51 - $100<br>
-                </div>
-                <div>
-                    <h6>Category</h6>
+                    <h6>Company Type</h6>
                     <input type="checkbox"> Category X<br>
                     <input type="checkbox"> Category Y<br>
                 </div>
