@@ -1,0 +1,6 @@
+.quotation-box {
+    border: 3px solid red !important;
+    border-radius: 40% !important;
+    width: 50% !important;
+    height: 50% !important;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title', 'Lived dream')</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
+
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            width: 250px;
+            background: #343a40;
+            color: #fff;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            padding:10px;
+        }
+        .sidebar .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #ebdfdf;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        .sidebar a:hover {
+            background: #495057;
+        }
+        .main-content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+        .navbar {
+            background: rgb(211, 218, 225);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <a href="#" class="nav-item"> <img src="img/hugeicons_menu-square.png" alt=""> Dashboard</a>
+    <a href="#" class="nav-item"> <img src="img/Vector.png" alt="">  Quotations</a>
+    <a href="/products" class="nav-item"> <img src="img/Vector.png" alt=""> Products</a>
+    <a href="/companies" class="nav-item"> <img src="img/Vector (2).png" alt="">Companies</a>
+    <a href="#" class="nav-item"> <img src="img/Vector (3).png" alt=""> Categories</a>
+    <a href="#" class="nav-item"><img src="img/Vector (4).png" alt="">Zones</a>
+    <a href="/adhesive" class="nav-item"><img src="img/Vector (5).png" alt="">Adhesive</a>
+    <a href="#" class="nav-item"><img src="img/Vector (6).png" alt="">Samples</a>
+    <a href="#" class="nav-item"> <img src="img/solar_users-group-rounded-outline.png" alt="">Users</a>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="container mt-4">
+        @yield('content')
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

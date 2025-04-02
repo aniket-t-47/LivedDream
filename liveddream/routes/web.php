@@ -7,6 +7,9 @@ use App\Http\Controllers\AdhesiveController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SampleController;
 use App\Http\Controllers\zoneController;
+use App\Http\Controllers\QuotationController;
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/companies', [CompanyController::class, 'store'])->name('companies.store');
     Route::get('/adhesive', [AdhesiveController::class, 'create'])->name('adhesive.create');
     Route::post('/adhesive', [AdhesiveController::class, 'store'])->name('adhesive.store');
+    Route::get('/adhesivee', [AdhesiveController::class, 'index'])->name('adhesive.index');
     Route::post('/products', [ProductController::class, 'store'])->name('products.store');
     Route::get('/show-products', [ProductController::class, 'index'])->name('products.show');
     Route::get('/companiess', [CompanyController::class, 'index'])->name('companies.index');
@@ -47,8 +51,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/index-sample', [SampleController::class, 'index'])->name('sample.index');
     Route::get('/create-zones', [zoneController::class, 'create'])->name('zones.create');
     Route::get('/index-zones', [zoneController::class, 'index'])->name('zones.index');
+<<<<<<< Updated upstream
     Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
     Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+=======
+    Route::get('/create-quotation', [QuotationController::class, 'create'])->name('quatations.create_quotation');
+    Route::get('/new-quotation', [QuotationController::class, 'newQuotation'])->name('quatations.new_quotation');
+
+
+>>>>>>> Stashed changes
 
     Route::get('/edit-product-image/{id}/{product_id}', [ProductController::class, 'editProductImage'])->name('product.image.edit');
     Route::put('/update-product-image/{id}', [ProductController::class, 'updateProductImage'])->name('product.image.update');

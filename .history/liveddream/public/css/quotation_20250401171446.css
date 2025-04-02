@@ -1,0 +1,74 @@
+/* Apply background to the body */
+.bg-image {
+    background-image: url('/img/Home-lived dream 1 (1).png'); /* Ensure image is in public/img/ */
+    background-size: cover;
+    /* background-position: center; */
+    height: 50vh;
+    margin: 0;
+}
+
+/* Center and style the quotation container */
+.quotation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style the quotation box */
+.quotation-box {
+    border: 15px solid;
+    border-image: linear-gradient(90deg, #CF5D5D 0%, #FFABAB 56%, #800000 100%);
+    border-image-slice: 1;
+    border-radius: 10%;
+   
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Corrected typo from `align-item` to `align-items` */
+   
+  
+  /* padding: 5px;
+  margin: 5px */
+}
+/* .btn-create{
+    background-color: black;
+    color: white;
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    
+    cursor: pointer;
+} */
+
+.quotation-img img{
+    width:90%;
+    height: 90%;
+}
+.d-grid{
+    display: flex; 
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically (if needed) */
+    border-radius: 5px;
+    
+    background-color: black;
+    color: rgb(255, 255, 255);
+    width:35%;
+}
+.btn-create {
+    color: white; /* Makes text color white */
+}
+.text{
+    color:grey;
+    font-size: medium;
+    margin-bottom: 5%;
+   
+}
+.area{
+    display:flex;
+    flex-direction:row;
+    width:50%
+}

@@ -1,0 +1,34 @@
+@extends('layouts.nav')
+
+@section('content')
+
+<div class="quatation-content d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card p-4" style="width: 50%; max-width: 600px;"> 
+        <h2 class="mb-4 text-center">New Quotation</h2>
+
+        <h5>Project Details</h5>
+        <div class="mt-4 d-flex flex-column">
+            <label class="form-label">Service Type</label>
+            <select class="service form-select">
+                <option value="">Select Service</option>
+                <option value="wall">Wall</option>
+                <option value="floor">Floor</option>
+                <option value="ceiling">Ceiling</option>
+            </select>
+        </div>
+
+        <div class="mt-3">
+            <label>Installation Area*</label>
+            <div class="d-flex flex-wrap gap-2">
+                <button type="button" class="btn btn-outline-primary">Living Room</button>
+                <button type="button" class="btn btn-outline-primary">Bedroom</button>
+                <button type="button" class="btn btn-outline-primary">Kitchen</button>
+                <button type="button" class="btn btn-outline-primary">Bathroom</button>
+                <button type="button" class="btn btn-outline-primary">Balcony</button>
+                <button type="button" class="btn btn-outline-primary">Other</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection
