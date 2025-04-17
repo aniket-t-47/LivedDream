@@ -10,7 +10,7 @@
                 </div>
 
                 <!-- Search & Filter -->
-                <div class="card p-3 border-0 shadow-sm" style="width:1200px">
+                <div class="card p-3 border-0 shadow-sm w-100" style="width:1200px">
                     <div class="d-flex justify-content-between align-items-center">
                         <!-- Search -->
                         <div class="input-group" style="max-width: 300px;">
@@ -23,28 +23,30 @@
                         <!-- <button class="btn btn-light border"><i class="fa-solid fa-filter"></i> Filter</button>
                         <button class="btn btn-light border" type="button"><i class="fa-regular fa-trash fa-2xs" style="color: #ec1313;"></i></button> -->
                         <div class="d-flex gap-2">
-                            <button class="btn btn-light border" id="filterBtn">
-                                <i class="fa-solid fa-filter"></i> Filter
-                            </button>
-                            <button class="btn btn" id="deleteToggle">
-                                <i class="fa-solid fa-trash fa-lg" style="color: #ec1313;"></i>
-                            </button>
+                                <button class="btn btn" id="deleteToggle">
+                                    <i class="fa-solid fa-trash fa-lg" style="color: #ec1313;" ></i>
+                                </button>
+                            
+                                <button class="btn  d-flex align-items-center justify-content-center" id="filterBtn">
+                                    <i class="fa-solid fa-filter"></i> 
+                                </button>
+                      
                         </div>
                     </div>
                 </div>
 
                 <!-- Product Table -->
-                <div class="card mt-3 border-0 shadow-sm" style="width:1200px">
+                <div class="card mt-3 border-0 shadow-sm table-responsive w-100" style="width:1200px">
                     <table class="table align-middle">
                         <thead class="table-light">
                             <tr>
-                                <th>#</th>
-                <th>Company</th>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Purchase Cost</th>
-                <th>Selling Price</th>
-                <th>Action</th>
+                                <th>Sr No</th>
+                                <th>Company</th>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Purchase Cost</th>
+                                <th>Selling Price</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
 
@@ -59,12 +61,19 @@
                                 <td>₹{{ $adhesive->purchase_cost }}</td>
                                 <td>₹{{ $adhesive->selling_price }}</td>
                                 <td>
-                                    <a href="{{ route('adhesive.edit', $adhesive->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    <form action="{{ route('adhesive.destroy', $adhesive->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure?');">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger btn-sm" type="submit">Delete</button>
-                                    </form>
+                                <td>
+                                        <a href="{{ route('adhesive.edit', $adhesive->id) }}" class="btn btn-warning btn-sm">
+                                            <i class="fas fa-pencil-alt"></i> 
+                                        </a>
+                                        <form action="{{ route('adhesive.destroy', $adhesive->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger btn-sm" type="submit">
+                                                <i class="fa-solid fa-trash fa-lg" style="color: #ec1313;" ></i>
+                                            </button>
+                                        </form>
+                                    </td>
+
                                 </td>
                             </tr>
                             @endforeach                        </tbody>

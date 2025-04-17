@@ -7,11 +7,11 @@
         <div class="col-md-12 p-4">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h2 class="fw-bold">Zone Management</h2>
-                <a class="btn btn-primary px-3" href="/zones/create"><i class="fas fa-plus"></i> Add New Zone</a>
+                <a class="btn btn-primary px-3" href="/zones-create"><i class="fas fa-plus"></i> Add New Zone</a>
             </div>
 
             <!-- Search & Filter -->
-            <div class="card p-3 border-0 shadow-sm" style="width:1200px">
+            <div class="card p-3 border-0 shadow-sm w-100" style="width:1200px">
                 <div class="d-flex justify-content-between align-items-center">
                     <!-- Search -->
                     <div class="input-group" style="max-width: 300px;">
@@ -23,18 +23,19 @@
                     <!-- <button class="btn btn-light border"><i class="fa-solid fa-filter"></i> Filter</button>
                     <button class="btn btn-light border" type="button"><i class="fa-regular fa-trash fa-2xs" style="color: #ec1313;"></i></button> -->
                     <div class="d-flex gap-2">
-                        <button class="btn btn-light border" id="filterBtn">
-                            <i class="fa-solid fa-filter"></i> Filter
-                        </button>
                         <button class="btn btn" id="deleteToggle">
-                            <i class="fa-solid fa-trash fa-lg" style="color: #ec1313;"></i>
+                            <i class="fa-solid fa-trash fa-lg" style="color: #ec1313;" ></i>
+                        </button>
+                    
+                        <button class="btn  d-flex align-items-center justify-content-center" id="filterBtn">
+                            <i class="fa-solid fa-filter"></i> 
                         </button>
                     </div>
                 </div>
             </div>
 
             <!-- Product Table -->
-            <div class="card mt-3 border-0 shadow-sm" style="width:1200px">
+            <div class="card mt-3 border-0 shadow-sm table-responsive w-100" >
                 <table class="table align-middle">
                     <thead class="table-light">
                         <tr>
@@ -42,7 +43,7 @@
                             <th>Sr No</th>
                             <th>Zone Name</th>
                             <th>Coverage area</th>
-                            <th></th>
+                            <th>Action</th>
 
                            
                             
@@ -70,13 +71,13 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('zones.edit', $zone->id) }}" class="dropdown-item">Edit</a>
+                                        <a href="{{ route('zones.edit', $zone->id) }}" class="dropdown-item"><i class="fas fa-pencil-alt"></i> </a>
 
                                     </li>
                                     <li>
                                         <form action="{{ route('zones.destroy', $zone->id) }}" method="POST" style="display:inline-block;">
                                             @csrf
-                                            <button type="submit" class="dropdown-item text-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                            <button type="submit" class="dropdown-item text-danger" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash fa-lg" style="color: #ec1313;" ></i></button>
                                         </form>
                                     </li>
                                 </ul>

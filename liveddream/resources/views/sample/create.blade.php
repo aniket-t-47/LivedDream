@@ -8,59 +8,81 @@
         </div>
 
         <!-- Main Content Section -->
-        <div class="row mt-3 d-flex flex-row" style="gap:5%"> <!-- Ensure flex row alignment -->
-            <!-- Company Details -->
-            <div class="card" style="width: 50%">
-                <div class="mb-5">
-                    <h5>Sample Details</h5>
-                    <div class="mt-4">
-                        <label class="form-label">Category Name</label>
-                        <input type="text" name="category" class="form-control w-100" placeholder="Enter category name" required>
-                    </div>
-                    <div class="mt-4">
-                        <label class="form-label">Sample Name</label>
-                        <input type="text" name="sample_name" class="form-control w-100">
-                    </div>
-                    <div class="mt-4">
-                        <label class="form-label">Sample Cost</label>
-                        <input type="text" name="sample_cost" class="form-control w-100" placeholder="00">
-                    </div>
-                    <div class="mt-4">
-                        <span>Display area required</span>
-                        <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                            <div>
-                                <label class="form-label">Length</label>
-                                <input type="text" class="form-control w-100" placeholder="00">
-                            </div>
-                            <div>
-                                <label class="form-label">Width</label>
-                                <input type="text" name="width" class="form-control w-100" placeholder="00">
-                            </div>
+        <div class="row mt-3">
+    <!-- Company Details -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>Sample Details</h5>
+                        <div class="mt-4">
+                            <label class="form-label">Company</label>
+                            <input type="text" name="company" class="form-control" placeholder="Enter category name" required>
                         </div>
-                        <div>
-                            <label class="form-label">Thickness</label>
-                            <input type="text" name="thickness" class="form-control" style="width: 37%;" placeholder="00">
+                        <div class="mt-4">
+                            <label class="form-label">Sample Name</label>
+                            <input type="text" name="sample_name" class="form-control">
+                        </div>
+                        <div class="mt-4">
+                            <label class="form-label">Sample Cost</label>
+                            <input type="text" name="sample_cost" class="form-control" placeholder="00">
+                        </div>
+                        <div class="mt-4">
+                            <span>Display area required</span>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="form-label">Length</label>
+                                    <input type="text" class="form-control" placeholder="00">
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label">Width</label>
+                                    <input type="text" name="width" class="form-control" placeholder="00">
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label">Thickness</label>
+                                    <input type="text" name="thickness" class="form-control" placeholder="00">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Display Product Image Section -->
-            <div class="card" style="width: 40%; display: flex; justify-content: center; padding: 20px;">
-                <h6>Display Product Image</h6>
-                    <div class="upload-box" >
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card h-100 d-flex justify-content-center align-items-center p-4">
+                    <h6>Display Product Image</h6>
+                    <div class="upload-box text-center mt-3">
                         <input type="file" id="fileInput" accept=".jpg, .png, .webp" hidden>
-                        <label for="fileInput" class="upload-area" style="justify-items: center">
-                            <!-- <img src="upload-icon.png" alt="Upload Icon" class="upload-icon"> -->
+                        <label for="fileInput" class="upload-area" style="cursor: pointer;">
                             <i class="fa-solid fa-cloud-arrow-up fa-xl" style="color: #437ca8;"></i>
                             <p>Drag your file(s) or <span class="browse-text">browse</span></p>
                             <small>Max 10 MB files are allowed</small>
                         </label>
-                        
                     </div>
-                    <p class="file-support-text">Only support .jpg, .png, and .webp files</p>
-        
+                    <p class="file-support-text mt-2">Only support .jpg, .png, and .webp files</p>
+                </div>
             </div>
         </div>
+
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const mainContent = document.getElementById('mainContent');
+        const saveBtn = document.getElementById('sample');
+        const scrollThreshold = 100;
+
+            if (mainContent && saveBtn) {
+                mainContent.addEventListener('scroll', () => {
+                    if (mainContent.scrollTop > scrollThreshold) {
+                        saveBtn.classList.add('fixed-save-btn');
+                    } else {
+                        saveBtn.classList.remove('fixed-save-btn');
+                    }
+                });
+            } else {
+                console.warn('Main content or Save button not found');
+            }
+        });
+
+    </script>
 @endsection

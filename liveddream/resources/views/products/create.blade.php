@@ -1,12 +1,16 @@
 @extends('layouts.app')
 @section('content')
     <div class="content">
-        <h2 class="mb-4">Create New Product</h2>
+        <div class="d-flex  flex-row">
+            <h2 class="mb-4">Create New Product</h2>
+            <!-- <button class="btn btn-primary py-1 display-flex flot-end"  id="product">Save Product</button> -->
+        </div>
+       
 
         <form action="{{ route('products.store') }}" method="POST" id="productForm" enctype="multipart/form-data" onsubmit="return false;">
             @csrf
-            <button class="btn btn-primary"  id="product">Save Product</button>
-            <div class="row">
+            
+            <div class="row tab-column">
                 <div class="col-md-6">
 
                     <div class="card">
@@ -40,28 +44,28 @@
                                 <span id="product_name_error" style="color: red;"></span>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Application Area</label>
+                                <label class="form-label" id="">Application Area</label>
                                 <input type="text" name="app_area" class="form-control" placeholder="Enter application area">
                                 
                             </div>
                             <h5>Product Size</h5>
-                            <div class="row" id="size-container">
-                                <div class="col-md-4">
+                            <div class="row flex-nowrap " id="size-container">
+                                <div class="col-4"  style="min-width: 50px;">
                                     <label class="form-label">Length</label>
                                     <input type="number" name="length[]" class="form-control" value="00"
                                         min="0">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-4"  style="min-width: 50px;">
                                     <label class="form-label">Width</label>
                                     <input type="number" name="width[]" class="form-control" value="00" min="0">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-4"  style="min-width: 50px;">
                                     <label class="form-label">Thickness</label>
                                     <input type="number" name="thickness[]" class="form-control" value="00"
                                         min="0">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" id="unit" >
                                 <div class="col-md-6">
                                     <label class="form-label">Unit</label>
                                     <select name="unit" id="unit" class="form-select">
@@ -78,8 +82,9 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="" class="form-label">Other</label>
-                                    <button type="button" class="btn btn-primary form-control" id="add-size">Add
+                                    <button type="button" class="btn btn-primary form-control mb-2" id="add-size">Add
                                         Parameter</button>
+                                    <div id="custom-params-container"></div>
                                 </div>
                             </div>
 
@@ -148,7 +153,20 @@
                         <div class="card m-2">
                             <div class="m-3">
                                 <h5>Product Images</h5>
-                                <button class="btn btn-dark w-100 mb-3"  data-bs-toggle="modal" data-bs-target="#addproduct">Add Product Images</button>
+                                <div class="row justify-content-center">
+                                    <!-- <div class=" col-md-6 col-lg-4">
+                                        <div class="d-flex justify-content-center">
+                                            <button class="btn btn-dark w-80 mb-3" >
+                                                Add Product Images
+                                            </button>
+                                        </div>
+                                    </div> -->
+                                    <div class="d-grid gap-2 col-6 mx-auto col-md-6 ">
+                                        
+                                        <button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addproduct">Add Product Images</button>
+                                    </div>
+                                </div>
+
 
                                 <div class="modal fade" id="addproduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -251,6 +269,12 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                    <!-- <button class="btn btn-primary py-1 display-flex flot-end"  id="product">Save Product</button> -->
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        
+                                        <button class="btn btn-primary" type="Submit" id="product">Save Product</button>
+                                    </div>
+
                                 
                                     <!-- File Upload Section -->
                                     <h6 class="mt-4">Upload Sample Images</h6>
@@ -552,26 +576,31 @@ function showError(id, msg, color) {
             if (addButton && container) {
                 addButton.addEventListener("click", function() {
                     let newRow = document.createElement("div");
-                    newRow.classList.add("row", "mt-2");
+                    newRow.classList.add("row", "mt-2","justify-content-flex-start", );
 
                     newRow.innerHTML = `
-                <div class="col-md-5">
+                <div class="col-md-8 ">
                     <label class="form-label">Parameter Name</label>
                     <input type="text" name="custom_keys[]" class="form-control" placeholder="Enter parameter (e.g., Height)">
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-7 ">
                     <label class="form-label">Value</label>
                     <input type="text" name="custom_values[]" class="form-control" >
                 </div>
-               <div class="col-md-2 text-center">
-                <button type="button" class="btn btn-danger mt-5 btn-sm remove-row">X</button>
-            </div>
+               <div class="col-md-2  text-center">
+                <button type="button" class="btn btn-danger mt-5 btn-sm remove-row">Remove</button>
+               </div>
             `;
 
-                    container.appendChild(newRow);
-                    newRow.querySelector(".remove-row").addEventListener("click", function () {
-                        newRow.remove();
-                    });
+                addButton.insertAdjacentElement('afterend', newRow); // Insert after the button
+            // // newRow.querySelector(".remove-row").addEventListener("click", function () {
+                    // //     newRow.remove();
+                    // });
+                });
+                document.addEventListener("click", function (e) {
+                    if (e.target && e.target.classList.contains("remove-row")) {
+                        e.target.closest(".row").remove();
+                    }
                 });
             } else {
                 console.error("Element not found: Ensure 'add-size' button and 'size-container' exist.");
