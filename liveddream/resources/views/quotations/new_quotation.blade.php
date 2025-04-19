@@ -12,26 +12,26 @@
             <label class="form-label">Service Type</label>
             <select class="service form-select">
                 <option value="">Select Service</option>
-                <option value="wall">Wall</option>
-                <option value="floor">Floor</option>
-                <option value="ceiling">Ceiling</option>
+                <option value="wall" id="wall">Wall</option>
+                <option value="floor" id="floor">Floor</option>
+                <option value="ceiling" id="Ceiling">Ceiling</option>
             </select>
         </div>
 
-        <div class="mt-3">
+        <div class="mt-3 ">
             <label>Installation Area*</label>
             
                 <div class="buttons">
-                    <button type="button">Living room</button>
-                    <button type="button">Bed room</button>
+                    <button type="button" id="livingroom" class="area-btn">Living room</button>
+                    <button type="button" id="bedroom" class="area-btn">Bed room</button>
                 </div>
                 <div class="buttons">
-                    <button type="button">Kitchen</button>
-                    <button type="button">Bathroom</button>
+                    <button type="button" id="kitchen" class="area-btn">Kitchen</button>
+                    <button type="button" id="bathroom" class="area-btn">Bathroom</button>
                 </div>
                 <div class="buttons">
-                    <button type="button">Balcony</button>
-                    <button type="button">Other</button>
+                    <button type="button" id="balcony" class="area-btn">Balcony</button>
+                    <button type="button" id="other" class="area-btn">Other</button>
                  </div>
             </div>
         </div>
@@ -40,11 +40,53 @@
         <!-- <button type="button" class="btn btn-outline-secondary" style="width:10%" onclick="window.location.href='views\quatations\create_quotation.blade.php'">Back</button>
         <button type="button" class="btn btn-outline-secondary" style="width:10%">Next</button> -->
         <a href="{{ route('quotations.create_quotation') }}" class="btn btn-outline-secondary"style="width:15%" >Back</a>
-        <a href="{{ route('quotations.product_list') }}" class="btn btn-outline-secondary " style="width:15%" >Next</a>
+        <a href="{{ route('quotations.product_list') }}"id="nextBtn" class="btn btn-outline-secondary " style="width:15%" >Next</a>
         
 
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Highlight selected area button and add the 'active' class
+        document.querySelectorAll('.area-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove 'active' class from all buttons
+                document.querySelectorAll('.area-btn').forEach(btn => btn.classList.remove('active', 'btn-primary'));
+
+                // Add 'active' class and style to the clicked button
+                this.classList.add('active', 'btn-primary');
+            });
+        });
+
+        const nextButton = document.getElementById('nextBtn');
+
+        if (nextButton) {
+            nextButton.addEventListener('click', function (e) {
+                // Get the selected service value
+                const selectedService = document.querySelector('.service').value;
+
+                // Get the active installation area button text
+                const selectedArea = document.querySelector('.area-btn.active')?.innerText;
+
+             
+                // Check if both values are selected
+                if (!selectedService || !selectedArea) {
+                    e.preventDefault(); // Prevent page navigation
+                    alert("⚠️ Please select both: Service Type and Installation Area.");
+                } else {
+                    // Log both selected values in the console
+                    console.log("✅ Selected Service Type:", selectedService);
+                    console.log("✅ Selected Installation Area:", selectedArea);
+                }
+            });
+        }
+    });
+</script>
+
+
+
+
 
 @endsection
 
@@ -67,19 +109,3 @@
 
 
 
-<!-- <div class="installation-area">
-                            <label>Installation Area*</label>
-                            <div class="buttons">
-                                <button type="button">Living room</button>
-                                <button type="button">Bed room</button>
-                            </div>
-                            <div class="buttons">
-                                <button type="button">Kitchen</button>
-                                <button type="button">Bathroom</button>
-                            </div>
-                            <div class="buttons">
-                              
-                                <button type="button">Balcony</button>
-                                <button type="button">Other</button>
-                            </div>
-                        </div> -->

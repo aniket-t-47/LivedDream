@@ -245,16 +245,33 @@
 </div>
 
 <script>
-    document.getElementById('filterBtn').addEventListener('click', function() {
-        document.getElementById('filterSidebar').style.right = '0';
-    });
-    document.getElementById('closeFilter').addEventListener('click', function() {
-        document.getElementById('filterSidebar').style.right = '-300px';
-    });
-    document.getElementById('deleteToggle').addEventListener('click', function() {
-        let checkboxes = document.querySelectorAll('.selectItem, #selectAll');
-        checkboxes.forEach(cb => cb.style.display = cb.style.display === 'none' ? 'block' : 'none');
-    });
+   document.addEventListener('DOMContentLoaded', function () {
+    const filterBtn = document.getElementById('filterBtn');
+    const closeFilter = document.getElementById('closeFilter');
+    // const deleteToggle = document.getElementById('deleteToggle');
+
+    if (filterBtn) {
+        filterBtn.addEventListener('click', function () {
+            document.getElementById('filterSidebar').style.right = '0';
+        });
+    }
+
+    if (closeFilter) {
+        closeFilter.addEventListener('click', function () {
+            document.getElementById('filterSidebar').style.right = '-300px';
+        });
+    }
+
+    // if (deleteToggle) {
+    //     deleteToggle.addEventListener('click', function () {
+    //         let checkboxes = document.querySelectorAll('.selectItem, #selectAll');
+    //         checkboxes.forEach(cb => {
+    //             cb.style.display = cb.style.display === 'none' ? 'block' : 'none';
+    //         });
+    //     });
+    // }
+});
+
 </script>
 
 <!-- <script>

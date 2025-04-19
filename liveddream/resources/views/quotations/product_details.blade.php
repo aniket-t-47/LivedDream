@@ -31,15 +31,15 @@
     </div>
 
     <!-- Right Section -->
-    <div class=" w-100 w-lg-50" style="width:50%;">
+    <div class="card w-100 w-lg-50" style="width:50%;">
         <div >
             <h5>Calculate Area</h5>
             <div class="d-flex gap-3 justify-content-between">
-                <div class="d-flex flex-column">
+                <div class="d-flex flex-column align-items-start">
                     <label>Width (ft)</label>
                     <input type="number" class="form-control" placeholder="00">
                 </div>
-                <div class="d-flex flex-column">
+                <div class="d-flex flex-column align-items-start">
                     <label>Height (ft)</label>
                     <input type="number" class="form-control" placeholder="00">
                 </div>
@@ -47,7 +47,7 @@
             <input type="number" class="form-control mt-2" placeholder="Total Area (sq.ft)">
         </div>
         
-        <div class="card mt-3">
+        <div class="card mt-3 mb-3 w-100">
             <table class="table">
                 <thead>
                     <tr>
@@ -71,14 +71,14 @@
             </table>
         </div>
         
-        <div>
+        <div class="card w-100 mb-3">
             <h5>Additional Items</h5>
             <div class="d-flex gap-3 justify-content-between">
-                <div class="d-flex flex-column w-50">
+                <div class="d-flex flex-column w-50 align-items-start">
                     <label>Item Name</label>
                     <input type="text" class="form-control" placeholder="Enter Item Name">
                 </div>
-                <div class="d-flex flex-column">
+                <div class="d-flex flex-column align-items-start">
                     <label>Price</label>
                     <input type="number" class="form-control" placeholder="00">
                 </div>
@@ -86,15 +86,16 @@
         </div>
          
 
-        <h5>Labor & Transportation Details</h5>
-        <div class="card p-3 mt-3 d-flex flex-column">
+       
+        <div class="card p-3 mt-3 d-flex flex-column w-100 mb-3">
+            <h5>Labor & Transportation Details</h5>
            
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between align-items-start">
                 
                 <label>Labor Charges</label>
                 <span>00</span>
             </div>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between align-items-start">
                 <label>Estimated Delivery Date</label>
                 <span>00</span>
             </div>
@@ -108,7 +109,7 @@
             </div>
         </div>
         
-        <div class="card d-flex flex-column mt-3">
+        <div class="card d-flex flex-column mt-3 w-100">
             <div class="form-check">
                 <label class="form-check-label">
                         <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
@@ -157,6 +158,85 @@
 
 </script>
 <script>
-       
+    function showApplicationArea() {
+        // Sample dynamic data – replace these with actual dynamic values if available
+        const productName = "Golden Wallpaper"; 
+        const productId = document.getElementById('productid').innerText || "Unknown ID";
+        const installationAreaId = "IA456"; // Placeholder – replace with real value if available
+        const serviceType = "Interior Design"; // Placeholder – update as per your logic
+
+        const message = `📌 This ${productName}/${productId} is used for installation area (${installationAreaId}) on wall (${serviceType}).`;
+
+        
+        const popup = document.createElement('div');
+        popup.style.position = 'fixed';
+        popup.style.top = '0';
+        popup.style.left = '0';
+        popup.style.width = '100%';
+        popup.style.height = '100%';
+        popup.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        popup.style.display = 'flex';
+        popup.style.justifyContent = 'center';
+        popup.style.alignItems = 'center';
+        popup.style.zIndex = '9999';
+
+    
+        const popupBox = document.createElement('div');
+        popupBox.style.backgroundColor = '#fff';
+        popupBox.style.padding = '35px';
+        popupBox.style.borderRadius = '10px';
+        popupBox.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.3)';
+        popupBox.style.width = '90%'; 
+        popupBox.style.maxWidth = '600px'; 
+        popupBox.style.height = "20%";
+        popupBox.style.textAlign = 'center';
+        popupBox.style.position = 'relative';
+
+        popupBox.innerHTML = `
+            <span style="position:absolute; top:10px; right:20px; cursor:pointer; font-size:20px;" onclick="this.parentElement.parentElement.remove()">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+            <p style="margin: 0; font-size: 16px; text-align: center;">${message}</p>
+        `;
+
+
+    
+        popup.appendChild(popupBox);
+
+        // Append popup to body
+        document.body.appendChild(popup);
+
+        // Close popup on background click
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.remove();
+            }
+        });
+    }
 </script>
+<script>
+   
+    function checkStock() {
+    const productName = "Golden Wallpaper";
+    const stockCount = "44";
+    const whatsappNumber = 7387964668;
+
+    const message = `Hello, I want to check stock availability for "${productName}".\nCurrently, there are ${stockCount} items available. Please confirm.`;
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    // Always open a new tab without a fixed window name to avoid reusing the same window
+    const win = window.open('', '_blank');
+    if (win) {
+        win.location.href = whatsappURL;
+    } else {
+        // Fallback if popup blocked
+        alert("Please allow popups to open WhatsApp.");
+    }
+}
+
+</script>
+
+
+
+
 @endsection

@@ -7,7 +7,7 @@
         <div class="col-md-12 p-4">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h2 class="fw-bold">Company Management</h2>
-                <a href="/companies" class="btn btn-primary px-3"><i class="fas fa-plus"></i> Add Company</a>
+                <a href="/companies-create" class="btn btn-primary px-3"><i class="fas fa-plus"></i> Add Company</a>
 
             </div>
 

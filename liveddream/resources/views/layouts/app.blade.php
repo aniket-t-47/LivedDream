@@ -6,31 +6,21 @@
     <title>@yield('title', 'Lived dream')</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<<<<<<< Updated upstream
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-     <!-- <link rel="stylesheet" href="resources/css/product.css"> -->
-     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
-=======
     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/regular.min.css">
 
->>>>>>> Stashed changes
 
 
     <style>
         body {
             background-color: #f8f9fa;
-<<<<<<< Updated upstream
-=======
             font-family: "Poppins", sans-serif;
             font-weight: 100;
             font-style: normal;
             width: 100%;
             transition: margin-left 0.3s ease-in-out;
->>>>>>> Stashed changes
         }
 
         .navbar {
@@ -61,35 +51,26 @@
             position: fixed;
             top: 60px; /* Below navbar */
             left: 0;
-<<<<<<< Updated upstream
-            padding-top: 20px;
-=======
             z-index: 1200;
             transform: translateX(0);
             transition: transform 0.3s ease-in-out;
-            padding: 10px;
->>>>>>> Stashed changes
+            padding: 10px 0;
+            
         }
 
         .sidebar .nav-item {
             display: flex;
-            align-items: center;
+          
             gap: 10px;
-            padding: 15px;
-            margin-bottom: 5px;
+            padding: 8px 7px;
+            /* margin-bottom: 5px; */
             text-decoration: none;
-<<<<<<< Updated upstream
-            padding: 10px 15px;
-            display: block;
-        }
-=======
             color: #ebdfdf;
             font-weight: 600;
             border-radius: 5px;
             transition: all 0.3s ease-in-out;
         }
 
->>>>>>> Stashed changes
         .sidebar a:hover {
             background: #495057;
         }
@@ -104,14 +85,6 @@
         }
 
         .main-content {
-<<<<<<< Updated upstream
-            margin-left: 260px;
-            padding: 20px;
-        }
-        .navbar {
-            background: #007bff;
-        }
-=======
             margin-left: 250px;
             padding: 10px;
             width: calc(100% - 250px);
@@ -161,6 +134,51 @@
             padding: 20px;
             transition: all 0.3s ease-in-out;
         }
+        .dropdown {
+            display: flex;
+            flex-direction: column;
+           
+        }
+
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            list-style: none;
+            padding-left: 30px;
+            margin-top: 1px; 
+            background-color:unset;
+            position: relative;
+        }
+
+        .dropdown.open .dropdown-menu {
+            display: flex;
+        } 
+
+         .dropdown-menu li {
+            margin-left: auto;
+            margin: 2px 0;
+        } 
+
+         .dropdown-icon {
+            transition: transform 0.1s ease;
+        } 
+
+         .dropdown.open .dropdown-icon {
+            transform: rotate(180deg);
+        }
+            #sidebar.collapsed .dropdown-icon {
+            display: none;
+        }
+        .sidebar .nav-item:last-child {
+            margin-bottom: 0; /* remove last item's extra space */
+        }
+
+        body.sidebar-collapsed .main-content {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+
 
 
         
@@ -226,39 +244,10 @@
                 z-index: 1080;
             }
         }
->>>>>>> Stashed changes
     </style>
 </head>
 <body>
 
-<<<<<<< Updated upstream
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <a href="#"><i class="fa-solid fa-th"></i> Dashboard</a>
-    <a href="#"><i class="fa-light fa-memo"></i> Quotations</a>
-    <a href="/show-products">Products</a>
-    <a href="/companies">Companies</a>
-    <a href="#">Categories</a>
-    <a href="/zones">Zones</a>
-    <a href="/adhesives">Adhesive</a>
-    <a href="#">Samples</a>
-    <a href="#">Users</a>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- Navigation Bar -->
-        {{-- <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Company Management</a>
-            </div>
-        </nav> --}}
-
-        <!-- Dynamic Content Section -->
-        <div class="container mt-4">
-            @yield('content')
-        </div>
-=======
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-0 static-top shadow position-relative">
     <button id="sidebartoggle" class="btn">
@@ -295,31 +284,125 @@
 
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
-   
-    <a href="{{ route('dashboard') }}" class="nav-item"><img src="img/hugeicons_menu-square.png" alt="" style="width: 20px; height: 20px;"> <span class="nav-text">Dashboard</span></a>
-    <a href="/create-quotation" class="nav-item"><img src="img/Vector.png" alt="" style="width: 20px; height: 20px;"> <span class="nav-text">Quotations</span></a>
-    <a href="/products" class="nav-item"><img src="img/Vector (1).png" alt=""style="width: 20px; height: 20px;" ><span class="nav-text">Products</span></a>
-    <a href="/companies" class="nav-item"><img src="img/Vector (2).png" alt="" style="width: 20px; height: 20px;"><span class="nav-text">Companies</span></a>
-    <a href="/create-categories" class="nav-item"><img src="img/Vector (3).png" alt="" style="width: 20px; height: 20px;"><span class="nav-text">Categories</span></a>
-    <a href="/zones-create" class="nav-item"><img src="img/Vector (4).png" alt="" style="width: 20px; height: 20px;"><span class="nav-text">Zones</span></a>
-    <a href="/adhesive" class="nav-item"><img src="img/Vector (5).png" alt="" style="width: 20px; height: 20px;"><span class="nav-text">Adhesive</span></a>
-    <a href="/create-sample" class="nav-item"><img src="img/Vector (6).png" alt="" style="width: 20px; height: 20px;"><span class="nav-text">Samples</span></a>
-    <a href="/create-user" class="nav-item"><img src="img/solar_users-group-rounded-outline.png" alt=""><span class="nav-text">Users</span></a>
+
+    <!-- Dashboard -->
+    <a href="{{ route('dashboard') }}" class="nav-item" style="margin-left:8px;margin-bottom:10px">
+        <img src="img/hugeicons_menu-square.png" alt="" style="width: 20px; height: 20px;">
+        <span class="nav-text">Dashboard</span>
+    </a>
+
+    <!-- Quotations -->
+    <a href="/create-quotation" class="nav-item"  style="margin-left:8px;margin-bottom:10px">
+        <img src="img/Vector.png" alt="" style="width: 20px; height: 20px;">
+        <span class="nav-text">Quotations</span>
+    </a>
+
+    <!-- Products Dropdown -->
+    <div class="nav-item dropdown" >
+        <a href="#" class="nav-item" onclick="toggleDropdown(this)">
+            <span style="">
+                <img src="img/Vector (1).png" style="width: 20px; height: 20px; margin-right: 8px;">
+                <span class="nav-text">Products</span>
+            </span>
+            <i class="fas fa-angle-down dropdown-icon" style="color:rgb(242, 232, 232);"></i>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="{{ route('products.store') }}" class="nav-item">Add New Product</a></li>
+            <li><a href="{{ route('products.show') }}" class="nav-item">Product List</a></li>
+        </ul>
+    </div>
+
+    <!-- Companies Dropdown -->
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-item" onclick="toggleDropdown(this)">
+            <span style="">
+                <img src="img/Vector (2).png" style="width: 20px; height: 20px; margin-right: 8px;">
+                <span class="nav-text">Companies</span>
+            </span>
+            <i class="fas fa-angle-down dropdown-icon" style="color:rgb(242, 232, 232);"></i>
+        <ul class="dropdown-menu">
+            <li><a href="{{ route('companies.create') }}" class="nav-item">Add New Company</a></li>
+            <li><a href="{{ route('companies.index') }}" class="nav-item">Company List</a></li>
+        </ul>
+    </div>
+
+    <!-- Categories Dropdown -->
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-item" onclick="toggleDropdown(this)">
+            <span >
+                <img src="img/Vector (3).png" style="width: 20px; height: 20px; margin-right: 8px;">
+                <span class="nav-text">Categories</span>
+            </span>
+            <i class="fas fa-angle-down dropdown-icon" style="color:rgb(242, 232, 232);"></i>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="{{ route('category.create') }}" class="nav-item">Add Category</a></li>
+            <li><a href="{{ route('category.index') }}" class="nav-item">Category List</a></li>
+        </ul>
+    </div>
+
+    <!-- Zones Dropdown -->
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-item" onclick="toggleDropdown(this)">
+            <span style="">
+                <img src="img/Vector (4).png" style="width: 20px; height: 20px; margin-right: 8px;">
+                <span class="nav-text">Zones</span>
+            </span>
+            <i class="fas fa-angle-down dropdown-icon" style="color:rgb(242, 232, 232);"></i>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="{{ route('zones.create') }}" class="nav-item">Add Zone</a></li>
+            <li><a href="{{ route('zones.index') }}" class="nav-item">Zone List</a></li>
+        </ul>
+    </div>
+
+    <!-- Adhesive Dropdown -->
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-item" onclick="toggleDropdown(this)">
+            <span style="display: flex; align-items: center;">
+                <img src="img/Vector (5).png" style="width: 20px; height: 20px; margin-right: 8px;">
+                <span class="nav-text">Adhesive</span>
+            </span>
+            <i class="fas fa-angle-down dropdown-icon" style="color:rgb(242, 232, 232);"></i>
+
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="{{ route('adhesive.create') }}" class="nav-item">Add Adhesive</a></li>
+            <li><a href="{{ route('adhesive.index') }}" class="nav-item">Adhesive List</a></li>
+        </ul>
+    </div>
+
+    <!-- Samples Dropdown -->
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-item" onclick="toggleDropdown(this)">
+            <span style="display: flex; align-items: center;">
+                <img src="img/Vector (6).png" style="width: 20px; height: 20px; margin-right: 8px;">
+                <span class="nav-text">Samples</span>
+            </span>
+            <i class="fas fa-angle-down dropdown-icon" style="color:rgb(242, 232, 232);"></i>
+
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="{{ route('sample.create') }}" class="nav-item">Add Sample</a></li>
+            <li><a href="{{ route('sample.index') }}" class="nav-item">Sample List</a></li>
+        </ul>
+    </div>
+
+    <!-- Users -->
+    <a href="/create-user" class="nav-item"  style="margin-left:8px;margin-bottom:10px">
+        <img src="img/solar_users-group-rounded-outline.png" alt="">
+        <span class="nav-text">Users</span>
+    </a>
 </div>
+
 
 <!-- MAIN CONTENT -->
 <div class="main-content" id="mainContent">
     <div class="container mt-4">
         @yield('content')
->>>>>>> Stashed changes
     </div>
 </div>
 
-<<<<<<< Updated upstream
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-=======
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -335,7 +418,29 @@
             }
         });
     });
+
+    
 </script>
->>>>>>> Stashed changes
+<script>
+    function toggleDropdown(element) {
+        const dropdown = element.closest('.dropdown');
+        if (dropdown) {
+            dropdown.classList.toggle('open');
+        }
+    }
+</script>
+<script>
+    document.addEventListener('click', function (e) {
+    const sidebar = document.getElementById('sidebar');
+    const toggle = document.getElementById('sidebartoggle');
+    if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+        if (window.innerWidth < 992) {
+            document.body.classList.remove('sidebar-collapsed');
+        }
+    }
+});
+
+</script>
+
 </body>
 </html>

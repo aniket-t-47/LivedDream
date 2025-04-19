@@ -22,7 +22,7 @@
 
 
 
-                    <button id="deleteSelected" class="btn p-0 d-flex align-items-center justify-content-center" >
+                    <button id="deleteSelected" onclick="deleteSelectedProducts()" class="btn p-0 d-flex align-items-center justify-content-center" >
                         <i class="fa-solid fa-trash fa-lg" style="color: #ec1313;" ></i>
                     </button>
                     <button class="btn  d-flex align-items-center justify-content-center" id="filterBtn">
@@ -42,7 +42,7 @@
                 
                 <div class="product-card position-relative  border rounded">
                     <!-- Checkbox (Top Left) -->
-                    <input type="checkbox" class="selectItem form-check-input position-absolute" style="top: 16px;left: 28px;">
+                    <input type="checkbox" class="selectItem form-check-input position-absolute product-checkbox" style="top: 16px;left: 28px;">
 
                     
                     <div class="dropdown position-absolute" style="top: 10px; right: 15px;">
@@ -83,7 +83,7 @@
                 
                 <div class="product-card position-relative  border rounded">
                     <!-- Checkbox (Top Left) -->
-                    <input type="checkbox" class="selectItem form-check-input position-absolute" style="top: 16px;left: 28px;">
+                    <input type="checkbox" class="selectItem form-check-input position-absolute product-checkbox" style="top: 16px;left: 28px;">
 
                     
                     <div class="dropdown position-absolute" style="top: 10px; right: 15px;">
@@ -124,7 +124,7 @@
 
                 <div class="product-card position-relative  border rounded">
                     <!-- Checkbox (Top Left) -->
-                    <input type="checkbox" class="selectItem form-check-input position-absolute" style="top: 16px;left: 28px;">
+                    <input type="checkbox" class="selectItem form-check-input position-absolute product-checkbox" style="top: 16px;left: 28px;">
 
                     
                     <div class="dropdown position-absolute" style="top: 10px; right: 15px;">
@@ -164,48 +164,7 @@
 
                 <div class="product-card position-relative  border rounded">
                     <!-- Checkbox (Top Left) -->
-                    <input type="checkbox" class="selectItem form-check-input position-absolute" style="top: 16px;left: 28px;">
-
-                    
-                    <div class="dropdown position-absolute" style="top: 10px; right: 15px;">
-                        <button class="btn btn-light border-0 p-1" type="button" data-bs-toggle="dropdown" style="width: 20px; height: 30px;">
-                            <i class="fa-solid fa-ellipsis-vertical"></i> <!-- 'View More' icon -->
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end p-1" style="min-width: 50px;">
-                            <li><a class="dropdown-item edit-btn p-1 text-center" href="#"><i class="fa-solid fa-pen"></i></a></li>
-                            <li><a class="dropdown-item delete-btn p-1 text-center" href="#"><i class="fa-solid fa-trash"></i></a></li>
-                        </ul>
-                    </div>
-
-
-
-                    
-                    <img id="productImage" class="product-image" src="img/image (1).png" alt="Product Image">
-
-                
-                    <div style="display:flex;flex-direction:column;align-items:flex-start;">
-                        <h6 id="productTitle">Modern geometry</h6>
-                    </div>
-                    <div style="display:flex;flex-direction:column">
-                        <div class="product-info-group">
-                            <span>Category</span>
-                            <p id="productcategory">Wall</p>
-                        </div>
-                        <div class="product-info-group">
-                            <span>Installation area</span>
-                            <p id="installationarea">Bedroom</p>
-                        </div>
-                        <div class="product-info-group">
-                            <span>Cost</span>
-                            <p id="productPrice"><i class="fa-solid fa-indian-rupee-sign fa-2xs" style="color: #d0c8c8;"></i>2000</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="product-card position-relative  border rounded">
-                    <!-- Checkbox (Top Left) -->
-                    <input type="checkbox" class="selectItem form-check-input position-absolute" style="top: 16px;left: 28px;">
+                    <input type="checkbox" class="selectItem form-check-input position-absolute product-checkbox" style="top: 16px;left: 28px;">
 
                     
                     <div class="dropdown position-absolute" style="top: 10px; right: 15px;">
@@ -246,7 +205,48 @@
 
                 <div class="product-card position-relative  border rounded">
                     <!-- Checkbox (Top Left) -->
-                    <input type="checkbox" class="selectItem form-check-input position-absolute" style="top: 16px;left: 28px;">
+                    <input type="checkbox" class="selectItem form-check-input position-absolute product-checkbox" style="top: 16px;left: 28px;">
+
+                    
+                    <div class="dropdown position-absolute" style="top: 10px; right: 15px;">
+                        <button class="btn btn-light border-0 p-1" type="button" data-bs-toggle="dropdown" style="width: 20px; height: 30px;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i> <!-- 'View More' icon -->
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end p-1" style="min-width: 50px;">
+                            <li><a class="dropdown-item edit-btn p-1 text-center" href="#"><i class="fa-solid fa-pen"></i></a></li>
+                            <li><a class="dropdown-item delete-btn p-1 text-center" href="#"><i class="fa-solid fa-trash"></i></a></li>
+                        </ul>
+                    </div>
+
+
+
+                    
+                    <img id="productImage" class="product-image" src="img/image (1).png" alt="Product Image">
+
+                
+                    <div style="display:flex;flex-direction:column;align-items:flex-start;">
+                        <h6 id="productTitle">Modern geometry</h6>
+                    </div>
+                    <div style="display:flex;flex-direction:column">
+                        <div class="product-info-group">
+                            <span>Category</span>
+                            <p id="productcategory">Wall</p>
+                        </div>
+                        <div class="product-info-group">
+                            <span>Installation area</span>
+                            <p id="installationarea">Bedroom</p>
+                        </div>
+                        <div class="product-info-group">
+                            <span>Cost</span>
+                            <p id="productPrice"><i class="fa-solid fa-indian-rupee-sign fa-2xs" style="color: #d0c8c8;"></i>2000</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card position-relative  border rounded">
+                    <!-- Checkbox (Top Left) -->
+                    <input type="checkbox" class="selectItem form-check-input position-absolute product-checkbox" style="top: 16px;left: 28px;">
 
                     
                     <div class="dropdown position-absolute" style="top: 10px; right: 15px;">
@@ -286,7 +286,7 @@
 
                 <div class="product-card position-relative  border rounded">
                     <!-- Checkbox (Top Left) -->
-                    <input type="checkbox" class="selectItem form-check-input position-absolute" style="top: 16px;left: 28px;">
+                    <input type="checkbox" class="selectItem form-check-input position-absolute product-checkbox" style="top: 16px;left: 28px;">
 
                     
                     <div class="dropdown position-absolute" style="top: 10px; right: 15px;">
@@ -386,6 +386,41 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Bootstrap Bundle JS (includes Popper.js) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Event listener for delete button
+document.querySelectorAll('.delete-btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        // Confirm before deletion
+        if (confirm("Are you sure you want to delete this product?")) {
+            // Find the parent product card and remove it from the DOM
+            const productCard = btn.closest('.product-card');
+            productCard.remove();
+        }
+    });
+});
+
+</script>
+<script>
+    function deleteSelectedProducts() {
+    const selectedProducts = document.querySelectorAll('.product-checkbox:checked');
+
+    if (selectedProducts.length > 0) {
+        if (confirm("Are you sure you want to delete the selected products?")) {
+            selectedProducts.forEach(cb => {
+                const productCard = cb.closest('.product-card');
+                if (productCard) {
+                    productCard.remove();
+                }
+            });
+        }
+    } else {
+        alert("Please select at least one product to delete.");
+    }
+}
+
+</script>
 
 
 @endsection
